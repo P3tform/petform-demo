@@ -1,0 +1,1 @@
+import {openMotionDialog} from './contextual-workspace.mjs';export function openProviderSettings(){openMotionDialog(document.querySelector('#demo-guide'))}document.querySelector('#provider-settings').onclick=openProviderSettings;

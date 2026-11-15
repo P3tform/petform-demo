@@ -1,0 +1,70 @@
+/* Alternate Studio shell; all existing editors and dialogs are retained. */
+body[data-interface=studio]{--sidebar:var(--pf-surface, #fff);--line:#e8e1e5}
+body[data-interface=studio] .sidebar{width:208px;padding:24px 18px}
+body[data-interface=studio] .main-shell{margin-left:208px}
+body[data-interface=studio] .sidebar-note,body[data-interface=studio] .workspace-label,body[data-interface=studio] .nav-label{display:none}
+body[data-interface=studio] .project-chip{margin:28px 0}
+.studio-actions{display:flex;flex-direction:column;gap:5px;margin:4px 0 20px 22px}
+.studio-action{display:flex;align-items:center;gap:12px;border:0;background:white;padding:11px 12px;text-align:left;border-radius:7px;font-size:13px}
+.studio-action.active{background:#fce5ef;color:#a60040;font-weight:650}
+.studio-dot{font-size:14px}.studio-actions #new-action{margin-top:8px;font-size:12px}
+body[data-interface=studio] main{padding:24px;max-width:none}
+body[data-interface=studio][data-workspace=animation] .intro{display:none}
+body[data-interface=studio][data-workspace=animation] .work-grid{grid-template-columns:minmax(0,1fr) minmax(320px,35%);gap:24px}
+body[data-interface=studio][data-workspace=animation] .stage{min-height:330px}
+body[data-interface=studio][data-workspace=animation] .pet-image{width:260px;height:260px}
+body[data-interface=studio] .panel-head{padding:16px}
+body[data-interface=studio] .animation-name input{font-size:25px}
+body[data-interface=studio] .inspector{padding-left:22px;border-left:1px solid var(--line)}
+body[data-interface=studio] .studio-generation{display:grid;grid-template-columns:minmax(0,1fr) 110px;gap:8px;margin:0}
+.studio-generation h2,.studio-generation .fine-print,.studio-generation #ai-status,.studio-generation label:has(#pose-count){grid-column:1/-1}
+.studio-generation label:has(#animation-direction){grid-column:1;grid-row:2;margin:0}
+.studio-generation #animation-direction{min-height:100px}
+.studio-generation #import-frames{grid-column:2;grid-row:2/4;align-self:stretch;margin:0}
+.studio-generation #generate-ai{grid-column:1;grid-row:3;margin:0}
+.studio-generation .field-hint{display:none}
+.studio-interactions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.studio-interactions button{flex-direction:column;padding:10px 5px;font-size:11px;min-height:75px}
+.studio-interactions button[aria-pressed=true]{border:2px solid #ce0050;background:#fff4f8}
+.interaction-icon{font-size:24px}
+.studio-approval{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.studio-approval button{width:100%;min-height:50px;font-size:14px}
+.studio-frame-strip{display:flex;align-items:center;gap:12px;min-width:0}
+.studio-frame-strip>.button{padding:8px;flex-shrink:0;min-width:32px;min-height:44px}
+.studio-frame-strip .timeline-scroll{flex:1;min-width:0}
+body[data-interface=studio] .studio-transport{justify-content:center;padding:14px 0}
+body[data-interface=studio] .creation-alternatives{margin-top:10px}
+body[data-interface=studio] .sidebar-bottom{margin-top:auto}
+body[data-interface=studio] .stage-corner{font-size:10px}
+@media(max-width:1100px){
+ body[data-interface=studio][data-workspace=animation] .work-grid{grid-template-columns:minmax(0,1fr) 300px;gap:16px}
+ body[data-interface=studio] .inspector{padding-left:14px}
+}
+@media(max-width:900px){
+ body[data-interface=studio] .sidebar{width:174px;padding:18px 12px}
+ body[data-interface=studio] .main-shell{margin-left:174px}
+ body[data-interface=studio] .brand-pixels{width:145px}
+ body[data-interface=studio] .nav-item{font-size:12px;justify-content:flex-start}
+ body[data-interface=studio][data-workspace=animation] .work-grid{grid-template-columns:1fr}
+ body[data-interface=studio] .inspector{border-left:0;padding:18px 0 0;border-top:1px solid var(--line)}
+}
+@media(max-width:680px){
+ body[data-interface=studio] .sidebar{position:static;width:100%;height:auto;display:block}
+ body[data-interface=studio] .main-shell{margin:0}
+ body[data-interface=studio] .brand-pixels{width:120px}
+ body[data-interface=studio] .project-chip{display:none}
+ body[data-interface=studio] .sidebar nav{display:flex;flex-wrap:wrap;margin-top:14px;gap:4px}
+ .studio-actions{order:4;width:100%;margin:8px 0 0;flex-direction:row;overflow-x:auto;padding:4px}
+ .studio-action{flex-shrink:0}
+ .studio-actions #new-action{flex-shrink:0;margin:0;white-space:nowrap}
+ body[data-interface=studio] main{padding:16px}
+ body[data-interface=studio][data-workspace=animation] .stage{min-height:250px}
+ body[data-interface=studio][data-workspace=animation] .pet-image{width:210px;height:210px}
+}
+
+body[data-interface=studio] .sidebar{overflow-y:auto}
+@media(max-width:680px){
+ body[data-interface=studio] .sidebar .nav-item{width:auto;flex:1;min-width:0;padding:10px 6px;gap:5px}
+ body[data-interface=studio] .sidebar .brand{justify-content:flex-start}
+ body[data-interface=studio] .studio-transport .playbar>.button{width:auto}
+}
